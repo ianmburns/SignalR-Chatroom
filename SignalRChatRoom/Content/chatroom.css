@@ -1,0 +1,46 @@
+﻿body,
+html {
+    margin: 0;
+    padding: 0;
+    color: #000;
+    background: #a7a09a;
+}
+
+#header {
+    padding: 5px 10px;
+    background: #ddd;
+}
+
+#pageContainer {
+    width: 750px;
+    margin: 0 auto;
+    background: #99c;
+}
+
+#main {
+    float: left;
+    width: 480px;
+    padding: 10px;
+    background: #9c9;
+}
+
+#nav {
+    float: right;
+    width: 230px;
+    padding: 10px;
+    background: #99c;
+}
+
+#connectedUsers {
+    height: 250px;
+    max-height: 300px;
+    overflow: auto;
+}
+
+#rooms {
+    height: 130px;
+}
+
+    #rooms li:not(.nav-header) {
+        cursor: pointer;
+    }

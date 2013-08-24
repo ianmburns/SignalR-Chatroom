@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "SignalR Chat Room";
+}
+
+<div id="main">
+    <div class="well well-small" style="height: 400px; max-height: 400px; overflow-y: visible;" data-bind='template: { name: template, foreach: messages }'>
+    </div>
+    <div>
+        <input id="txtMessage" class="input-block-level" type="text" placeholder="Please enter a user name and press the Enter key.">
+        <button id="btnSubmit" type="submit" class="btn hide">Join</button>
+    </div>
+</div>
+<div id="nav">
+    <div id="connectedUsers" class="well sidebar-nav tab-pane active">
+        <div data-bind="foreach: users">
+            <div data-bind="text: name"></div>
+        </div>
+    </div>
+    <div id="rooms" class="well well-small">
+        <ul class="nav nav-list">
+            <li class="nav-header">Rooms</li>
+            <li class="active" data-value="Lobby"><a>Lobby</a></li>
+            <li data-value="Games"><a>Games</a></li>
+            <li data-value="Sports"><a>Sports</a></li>
+            <li data-value="Politics"><a>Politics</a></li>
+        </ul>
+    </div>
+</div>
+
+@section styles
+{
+    <link rel="stylesheet" type="text/css" href="~/Content/chatroom.css">
+}
+
+@section scripts
+{
+    <script type="text/html" id="normalMessage">
+        <div>
+            <strong><span data-bind="text: name" />: </strong><span data-bind="    text: message"></span>
+        </div>
+    </script>
+    <script type="text/html" id="systemMessage">
+        <div>
+            <strong><span data-bind="text: message"></span></strong>
+        </div>
+    </script>
+
+    @Scripts.Render("~/bundles/chatroom");
+}
